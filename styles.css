@@ -1,10 +1,10 @@
 /* 기본 리셋 및 폰트 설정 */
 :root {
-    --color-bg-primary: #3C2F2F; /* 짙은 갈색 (배경) */
+    --color-bg-primary: #3C2F2F; /* 짙은 갈색 (주 배경) */
     --color-bg-secondary: #4A413A; /* 다크 웜 그레이 (보조 배경) */
     --color-text-light: #F4F4F4; /* 오프 화이트 (텍스트) */
     --color-accent: #B08968; /* 카라멜/테라코타 (강조색) */
-    --color-point: #704214; /* 진한 에스프레소 (포인트) */
+    --color-point: #704214; /* 진한 에스프레소 (푸터 및 구분선) */
 }
 
 * {
@@ -21,8 +21,13 @@ body {
     scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'Nanum Myeongjo', serif; /* 성숙하고 고급스러운 분위기 연출 */
+    color: var(--color-text-light);
+}
+
 .container {
-    width: 85%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
@@ -30,7 +35,7 @@ body {
 
 /* 헤더/내비게이션 스타일 */
 header {
-    background-color: rgba(60, 47, 47, 0.95); /* 배경색에 약간 투명도 추가 */
+    background-color: rgba(60, 47, 47, 0.95);
     padding: 15px 0;
     border-bottom: 2px solid var(--color-accent);
     position: sticky;
@@ -38,171 +43,98 @@ header {
     z-index: 1000;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 1.8em;
-    color: var(--color-accent);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--color-accent);
-}
+/* ... (나머지 헤더/네비게이션 스타일은 이전과 동일) ... */
+header h1 { font-size: 1.8em; color: var(--color-accent); }
+nav ul { list-style: none; display: flex; }
+nav ul li { margin-left: 30px; }
+nav ul li a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s ease; }
+nav ul li a:hover { color: var(--color-accent); }
 
 /* 공통 섹션 스타일 */
-.content-section {
-    padding: 80px 0;
-}
-
-.content-section h3 {
-    font-size: 2.2em;
-    color: var(--color-accent);
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.secondary-bg {
-    background-color: var(--color-bg-secondary);
-}
+.content-section { padding: 80px 0; }
+.content-section h3 { font-size: 2.2em; color: var(--color-accent); margin-bottom: 25px; text-align: center; }
+.secondary-bg { background-color: var(--color-bg-secondary); }
 
 /* 히어로 섹션 (메인 홈) */
 .hero {
-    background: url('placeholder_coffee_background.jpg') no-repeat center center/cover; /* 실제 고화질 이미지 URL로 교체하세요 */
-    height: 60vh;
+    background: url('placeholder_coffee_background.jpg') no-repeat center center/cover; 
+    height: 70vh; /* 높이 약간 증가 */
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--color-text-light);
     position: relative;
-    /* 어두운 분위기를 위한 오버레이 */
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); 
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.45); /* 오버레이를 조금 더 진하게 */
 }
 
-.hero h2 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-}
+.hero h2 { font-size: 4em; margin-bottom: 15px; }
+.hero p { font-size: 1.4em; margin-bottom: 40px; }
 
 /* 버튼 스타일 */
 .button {
     display: inline-block;
     background-color: var(--color-accent);
     color: var(--color-bg-primary);
-    padding: 12px 30px;
+    padding: 14px 35px; /* 패딩 증가 */
     text-decoration: none;
     font-weight: 700;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #D3A783; /* 강조색보다 조금 밝게 */
-}
-
-/* 기원 섹션 그리드 */
-.origin-grid {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.history-item {
-    flex: 1;
-    padding: 20px;
-    border: 1px solid var(--color-accent);
-    border-radius: 8px;
-}
-
-.history-item h4 {
-    color: var(--color-accent);
-    margin-bottom: 10px;
-}
+.button:hover { background-color: #D3A783; }
 
 /* 커피 카드 스타일 */
-.coffee-card-container {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
+.coffee-card-container { display: flex; gap: 30px; justify-content: center; margin-top: 30px; }
 .coffee-card {
     background-color: var(--color-bg-primary);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 30%;
     text-align: center;
 }
-
-.coffee-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.coffee-card h4 {
-    color: var(--color-accent);
-    margin-bottom: 10px;
-}
+.coffee-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+.coffee-card h4 { color: var(--color-accent); margin-bottom: 10px; }
 
 /* 원두 테이블 스타일 */
-.bean-table {
-    width: 70%;
-    margin: 30px auto;
-    border-collapse: collapse;
-    color: var(--color-text-light);
-}
+.bean-table { width: 70%; margin: 30px auto; border-collapse: collapse; color: var(--color-text-light); }
+.bean-table th, .bean-table td { border: 1px solid var(--color-bg-secondary); padding: 15px; text-align: left; }
+.bean-table th { background-color: var(--color-point); color: var(--color-text-light); font-weight: 700; }
 
-.bean-table th, .bean-table td {
-    border: 1px solid var(--color-bg-secondary);
-    padding: 15px;
-    text-align: left;
-}
 
-.bean-table th {
-    background-color: var(--color-point);
-    color: var(--color-text-light);
-    font-weight: 700;
-}
-
-/* 멀티미디어 섹션 */
-.video-embed, .music-recommendation {
-    margin-top: 40px;
+/* 🎥 유튜브 임베드 재생 문제 해결 및 반응형 CSS */
+.video-embed-wrapper {
+    max-width: 800px; /* 영상의 최대 너비 제한 */
+    margin: 40px auto;
     text-align: center;
 }
 
-.video-embed h4, .music-recommendation h4 {
-    color: var(--color-accent);
+.video-embed-wrapper h4 {
     margin-bottom: 15px;
+}
+
+.video-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 유지 (높이/너비 = 9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 8px; /* 모서리 둥글게 처리 */
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 부모 요소(.video-embed)에 맞게 너비 조절 */
+    height: 100%; /* 부모 요소(.video-embed)에 맞게 높이 조절 */
+    border: none; /* iframe 기본 테두리 제거 */
+}
+
+.music-recommendation {
+    margin-top: 50px;
+    text-align: center;
 }
 
 /* 푸터 */
@@ -212,4 +144,36 @@ footer {
     padding: 20px 0;
     text-align: center;
     font-size: 0.9em;
+}
+
+/* 미디어 쿼리 (모바일 반응형) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .hero {
+        height: 50vh;
+    }
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    .coffee-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .coffee-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .bean-table {
+        width: 95%;
+    }
 }
