@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☕ The Aroma - 성숙한 커피 가이드</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>The Aroma ☕</h1>
+        <div class="container flex-between">
+            <h1 class="logo">The Aroma ☕</h1>
             <nav>
-                <ul>
+                <ul class="nav-menu">
                     <li><a href="#home">홈</a></li>
-                    <li><a href="#origin">기원/역사</a></li>
-                    <li><a href="#types">커피 종류</a></li>
-                    <li><a href="#beans">원두 가이드</a></li>
-                    <li><a href="#media">갤러리</a></li>
+                    <li><a href="#origin">기원</a></li>
+                    <li><a href="#types">커피종류</a></li>
+                    <li><a href="#beans">원두</a></li>
+                    <li><a href="#media">미디어</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,48 +27,53 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h2>완벽한 한 잔의 깊이</h2>
-                <p>성숙하고 편안한 분위기 속에서 커피의 기원부터 제조법까지, 모든 것을 탐험하세요.</p>
-                <a href="#types" class="button">커피 종류 보기</a>
+                <div class="hero-content">
+                    <h2>시간이 머무는 깊은 향기</h2>
+                    <p>성숙한 어른들의 휴식처, 커피의 깊은 이야기를 탐험하세요.</p>
+                    <div class="hero-button-area">
+                        <a href="#types" class="button">커피 둘러보기</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="origin" class="content-section">
             <div class="container">
-                <h3>📜 커피의 기원과 역사</h3>
-                <p>커피는 에티오피아의 염소 목동 칼디의 전설로 시작되어 아랍 세계를 거쳐 전 세계로 퍼져나갔습니다. 커피 한 잔에 담긴 수백 년의 역사를 알아보세요.</p>
-                <div class="origin-grid">
-                    <div class="history-item">
-                        <h4>에티오피아의 전설</h4>
-                        <p>염소들이 빨간 열매를 먹고 흥분하는 것을 보고 커피가 발견되었다는 이야기입니다. 기원후 9세기 경의 이야기로 알려져 있습니다.</p>
-                    </div>
-                    <div class="history-item">
-                        <h4>아랍 세계로 전파</h4>
-                        <p>15세기 경, 예멘을 통해 아랍 세계로 퍼져나갔으며, 종교적 목적으로 사용되다가 대중화되었습니다.</p>
-                    </div>
-                </div>
+                <h3>📜 커피의 역사</h3>
+                <p class="section-desc">9세기 에티오피아 목동 칼디의 발견부터 현대의 에스프레소 문화까지, 커피는 인류와 함께 깊어왔습니다.</p>
             </div>
         </section>
-        
+
         <section id="types" class="content-section secondary-bg">
             <div class="container">
-                <h3>✨ 커피의 종류 (구성원)</h3>
-                <p>가장 기본이 되는 에스프레소부터 우유가 들어간 부드러운 음료까지 소개합니다.</p>
-                <div class="coffee-card-container">
-                    <div class="coffee-card">
-                        <img src="images/espresso.jpg" alt="에스프레소 샷 이미지">
-                        <h4>에스프레소 (Espresso)</h4>
-                        <p>고압으로 추출한 농축된 커피. 진한 풍미와 크레마가 특징입니다. 모든 커피 음료의 기본입니다.</p>
+                <div class="character-intro">
+                    <img src="image04/coffee_character.png" alt="커피 신사" class="character-img">
+                    <p class="speech-bubble">"이미지를 클릭하시면 제가 상세 정보를 설명해 드릴게요."</p>
+                </div>
+
+                <h3>✨ 커피의 구성원</h3>
+                
+                <div class="card-grid">
+                    <div class="coffee-card" onclick="openModal('espresso')">
+                        <img src="image01/espresso.png" alt="에스프레소">
+                        <div class="card-info">
+                            <h4>에스프레소</h4>
+                            <span>상세 정보 보기</span>
+                        </div>
                     </div>
-                    <div class="coffee-card">
-                        <img src="images/americano.jpg" alt="아메리카노 이미지">
-                        <h4>아메리카노 (Americano)</h4>
-                        <p>에스프레소에 뜨거운 물을 추가하여 만든 음료. 깔끔하고 부드러워 대중적으로 가장 사랑받습니다.</p>
+                    <div class="coffee-card" onclick="openModal('americano')">
+                        <img src="image02/americano.png" alt="아메리카노">
+                        <div class="card-info">
+                            <h4>아메리카노</h4>
+                            <span>상세 정보 보기</span>
+                        </div>
                     </div>
-                    <div class="coffee-card">
-                        <img src="images/latte.jpg" alt="카페 라떼 이미지">
-                        <h4>카페 라떼 (Caffe Latte)</h4>
-                        <p>에스프레소와 부드러운 스팀 밀크를 섞은 음료. 우유의 고소함과 커피의 풍미가 조화롭습니다.</p>
+                    <div class="coffee-card" onclick="openModal('latte')">
+                        <img src="image03/latte.png" alt="카페라떼">
+                        <div class="card-info">
+                            <h4>카페라떼</h4>
+                            <span>상세 정보 보기</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,25 +82,25 @@
         <section id="beans" class="content-section">
             <div class="container">
                 <h3>🌱 원두 가이드</h3>
-                <p>원두의 종류와 로스팅 단계에 따른 커피의 맛 변화를 이해하세요.</p>
+                
                 <table class="bean-table">
                     <thead>
                         <tr>
-                            <th>원두 종류</th>
+                            <th>품종</th>
                             <th>특징</th>
-                            <th>대표 맛</th>
+                            <th>대표적인 맛</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>**아라비카 (Arabica)**</td>
-                            <td>섬세한 향, 풍부한 산미. 고지대에서 재배됩니다.</td>
-                            <td>과일향, 신맛</td>
+                            <td>아라비카</td>
+                            <td>고지대 재배, 향미가 섬세함</td>
+                            <td>산뜻한 과일향, 산미</td>
                         </tr>
                         <tr>
-                            <td>**로부스타 (Robusta)**</td>
-                            <td>진한 바디감, 강한 쓴맛. 카페인 함량이 높습니다.</td>
-                            <td>쓴맛, 곡물향</td>
+                            <td>로부스타</td>
+                            <td>병충해에 강함, 카페인 함량 높음</td>
+                            <td>구수함, 묵직한 쓴맛</td>
                         </tr>
                     </tbody>
                 </table>
@@ -104,12 +109,73 @@
 
         <section id="media" class="content-section secondary-bg">
             <div class="container">
-                <h3>🎥 멀티미디어 갤러리</h3>
-                <p>커피의 깊이를 더해줄 핸드드립 영상과 배경 음악을 추천합니다.</p>
-                
-                <div class="video-embed-wrapper">
-                    <h4>[핸드드립] 초급자를 위한 간단한 브루잉 레시피 (페이지 내 재생)</h4>
-                    <div class="video-embed">
-                        <iframe 
-                            src="https://www.youtube.com/embed/FGJrUwhorSA" 
-                            title="초급자를 위한 간단한 브
+                <h3>🎥 멀티미디어 가이드</h3>
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/st571DYYTR8" 
+                        title="Coffee Guide Video" 
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/HGJSwFHA-f0?si=uszK4-83Rq_Mpfsr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2025 The Aroma. All rights reserved.</p>
+    </footer>
+
+    <div id="coffeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="상세 이미지">
+            <h2 id="modalTitle">이름</h2>
+            <hr>
+            <p id="modalDesc">상세 설명</p>
+        </div>
+    </div>
+
+    <script>
+        const coffeeData = {
+            espresso: {
+                title: "에스프레소 (Espresso)",
+                desc: "이탈리아어로 '빠르다'는 뜻을 가진 에스프레소는 높은 압력으로 짧은 시간에 추출한 진한 커피입니다. 모든 커피 메뉴의 기초가 되며, 강렬한 풍미를 느낄 수 있습니다.",
+                img: "image01/espresso.png"
+            },
+            americano: {
+                title: "아메리카노 (Americano)",
+                desc: "에스프레소에 뜨거운 물을 섞어 부드럽게 만든 음료입니다. 깔끔한 뒷맛 덕분에 전 세계적으로 가장 대중적인 사랑을 받는 메뉴입니다.",
+                img: "image02/americano.png"
+            },
+            latte: {
+                title: "카페라떼 (Caffe Latte)",
+                desc: "에스프레소와 따뜻한 우유를 조화롭게 섞은 음료입니다. 우유의 고소함이 커피의 쓴맛을 감싸주어 아침 식사 대용으로도 훌륭합니다.",
+                img: "image03/latte.png"
+            }
+        };
+
+        function openModal(type) {
+            const data = coffeeData[type];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('coffeeModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('coffeeModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('coffeeModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,188 +1,114 @@
-/* 기본 리셋 및 폰트 설정 */
+/* 카페 테마 색상 정의 */
 :root {
-    --color-bg-primary: #3C2F2F; /* 짙은 갈색 (주 배경) */
-    --color-bg-secondary: #4A413A; /* 다크 웜 그레이 (보조 배경) */
-    --color-text-light: #F4F4F4; /* 오프 화이트 (텍스트) */
-    --color-accent: #B08968; /* 카라멜/테라코타 (강조색) */
-    --color-point: #704214; /* 진한 에스프레소 (푸터 및 구분선) */
+    --primary-brown: #3C2F2F;    /* 메인 어두운 배경 */
+    --accent-gold: #B08968;      /* 포인트 골드 */
+    --light-brown: #4A413A;      /* 보조 배경 */
+    --text-white: #F4F4F4;       /* 텍스트 */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-light);
+    background-color: var(--primary-brown);
+    color: var(--text-white);
     line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Nanum Myeongjo', serif; /* 성숙하고 고급스러운 분위기 연출 */
-    color: var(--color-text-light);
-}
+h1, h2, h3 { font-family: 'Nanum Myeongjo', serif; color: var(--accent-gold); }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
 
-/* 헤더/내비게이션 스타일 */
+/* 헤더 */
 header {
-    background-color: rgba(60, 47, 47, 0.95);
-    padding: 15px 0;
-    border-bottom: 2px solid var(--color-accent);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 { font-size: 1.8em; color: var(--color-accent); }
-nav ul { list-style: none; display: flex; }
-nav ul li { margin-left: 30px; }
-nav ul li a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s ease; }
-nav ul li a:hover { color: var(--color-accent); }
-
-/* 공통 섹션 스타일 */
-.content-section { padding: 80px 0; }
-.content-section h3 { font-size: 2.2em; color: var(--color-accent); margin-bottom: 25px; text-align: center; }
-.secondary-bg { background-color: var(--color-bg-secondary); }
-
-/* 히어로 섹션 (메인 홈) - 이미지 경로 지정 완료 */
-.hero {
-    background: url('images/main_coffee_bg.jpg') no-repeat center center/cover; 
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--color-text-light);
-    position: relative;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.45);
-}
-
-.hero h2 { font-size: 4em; margin-bottom: 15px; }
-.hero p { font-size: 1.4em; margin-bottom: 40px; }
-
-/* 버튼 스타일 */
-.button {
-    display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-bg-primary);
-    padding: 14px 35px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover { background-color: #D3A783; }
-
-/* 커피 카드 및 이미지 스타일 */
-.coffee-card-container { display: flex; gap: 30px; justify-content: center; margin-top: 30px; }
-.coffee-card {
-    background-color: var(--color-bg-primary);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 30%;
-    text-align: center;
-}
-.coffee-card img { 
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 5px; 
-    margin-bottom: 15px; 
-}
-.coffee-card h4 { color: var(--color-accent); margin-bottom: 10px; }
-
-/* 원두 테이블 스타일 */
-.bean-table { width: 70%; margin: 30px auto; border-collapse: collapse; color: var(--color-text-light); }
-.bean-table th, .bean-table td { border: 1px solid var(--color-bg-secondary); padding: 15px; text-align: left; }
-.bean-table th { background-color: var(--color-point); color: var(--color-text-light); font-weight: 700; }
-
-/* 🎥 유튜브 임베드 (반응형) */
-.video-embed-wrapper {
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-.video-embed-wrapper h4 {
-    margin-bottom: 15px;
-}
-
-.video-embed {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 비율 유지 */
-    height: 0;
-    overflow: hidden;
-    background-color: black;
-    border-radius: 8px;
-}
-
-.video-embed iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* 추가 이미지 스타일 */
-.additional-image-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.additional-image-container .responsive-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.image-caption {
-    margin-top: 15px;
-    font-style: italic;
-    color: var(--color-text-light);
-}
-
-.music-recommendation {
-    margin-top: 50px;
-    text-align: center;
-}
-
-/* 푸터 */
-footer {
-    background-color: var(--color-point);
-    color: var(--color-text-light);
+    background-color: rgba(38, 28, 28, 0.95);
     padding: 20px 0;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid var(--accent-gold);
+}
+.nav-menu { display: flex; list-style: none; }
+.nav-menu li { margin-left: 20px; }
+.nav-menu li a { color: var(--text-white); text-decoration: none; font-size: 0.95rem; }
+.nav-menu li a:hover { color: var(--accent-gold); }
+
+/* --- 💡 버튼 위치 조정 섹션 (Hero) --- */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/main_bg.jpg') center/cover;
+    display: flex;
+    align-items: center; /* 수직 위치: center(중앙), flex-start(위), flex-end(아래) */
+    justify-content: center; /* 수평 위치: center, flex-start(왼쪽), flex-end(오른쪽) */
     text-align: center;
-    font-size: 0.9em;
 }
 
-/* 미디어 쿼리 (모바일 반응형) */
-@media (max-width: 768px) {
-    header .container { flex-direction: column; text-align: center; }
-    nav ul { margin-top: 15px; justify-content: center; }
-    nav ul li { margin: 0 10px; }
-    .hero { height: 50vh; }
-    .hero h2 { font-size: 2.5em; }
-    .coffee-card-container { flex-direction: column; align-items: center; }
-    .coffee-card { width: 80%; margin-bottom: 20px; }
-    .bean-table { width: 95%; }
+.hero h2 { font-size: 3.5rem; margin-bottom: 20px; }
+
+/* 버튼이 들어있는 영역의 여백을 조절하여 버튼을 더 아래로 밀 수 있습니다. */
+.hero-button-area {
+    margin-top: 60px; /* 이 수치를 높이면 버튼이 아래로 더 내려갑니다 */
 }
+
+.button {
+    background: var(--accent-gold);
+    color: var(--primary-brown);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.button:hover { background-color: #d4a373; transform: scale(1.05); }
+
+/* 섹션 공통 */
+.content-section { padding: 100px 0; text-align: center; }
+.secondary-bg { background-color: var(--light-brown); }
+
+/* 캐릭터 스타일 */
+.character-intro { margin-bottom: 50px; }
+.character-img { width: 160px; border-radius: 50%; border: 3px solid var(--accent-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.speech-bubble { margin-top: 15px; color: var(--accent-gold); font-style: italic; }
+
+/* 커피 카드 (그리드) */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.coffee-card {
+    background: var(--primary-brown);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.coffee-card:hover { transform: translateY(-10px); }
+.coffee-card img { width: 100%; height: 250px; object-fit: cover; }
+.card-info { padding: 20px; }
+.card-info span { font-size: 0.8rem; color: var(--accent-gold); }
+
+/* 원두 테이블 */
+.bean-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+.bean-table th { background: var(--accent-gold); color: var(--primary-brown); padding: 15px; }
+.bean-table td { padding: 15px; border-bottom: 1px solid var(--accent-gold); }
+
+/* 유튜브 */
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; max-width: 850px; margin: 0 auto; border-radius: 15px; overflow: hidden; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* 모달(팝업) 스타일 */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    background-color: var(--light-brown);
+    margin: 8% auto; padding: 40px;
+    width: 90%; max-width: 500px;
+    border-radius: 20px; text-align: center;
+    border: 1px solid var(--accent-gold);
+    animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-btn { float: right; font-size: 30px; cursor: pointer; color: var(--accent-gold); }
+#modalImg { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+
+footer { padding: 50px; background-color: #1a1515; text-align: center; font-size: 0.8rem; border-top: 1px solid var(--accent-gold); }
